@@ -3,6 +3,7 @@ import 'package:signup_and_signin/Screens/Login/components/text_field_container.
 import 'package:signup_and_signin/constants.dart';
 
 class RoundedPasswordField extends StatelessWidget {
+  final TextEditingController? controller;
   final ValueChanged<String> onChanged;
   final bool isObscure;
   final bool hasSuffix;
@@ -12,7 +13,7 @@ class RoundedPasswordField extends StatelessWidget {
     required this.onChanged,
     required this.onPressed,
     required this.hasSuffix,
-    required this.isObscure,
+    required this.isObscure, this.controller,
   });
 
   @override

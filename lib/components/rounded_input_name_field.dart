@@ -4,6 +4,7 @@ import 'package:signup_and_signin/constants.dart';
 import '../Screens/Login/components/text_field_container.dart';
 
 class RoundedInputNameField extends StatelessWidget {
+  final TextEditingController? controller;
   final String hintText;
   final IconData icon;
   final ValueChanged<String> onChanged;
@@ -11,7 +12,7 @@ class RoundedInputNameField extends StatelessWidget {
     super.key,
     required this.hintText,
     this.icon = Icons.person,
-    required this.onChanged,
+    required this.onChanged, this.controller,
   });
 
   @override

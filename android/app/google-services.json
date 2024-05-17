@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "735593816217",
+    "project_id": "signupandsignin-5dc49",
+    "storage_bucket": "signupandsignin-5dc49.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:735593816217:android:44c9b4dac8f9edf174d808",
+        "android_client_info": {
+          "package_name": "com.example.signup_and_signin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQj9IJVNfXt5Zc0g04U_u4bZGAuxdKTJU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

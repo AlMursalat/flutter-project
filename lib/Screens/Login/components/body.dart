@@ -41,7 +41,7 @@ class _BodyState extends State<Body> {
             height: size.height * 0.05,
           ),
           RoundedInputEmailField(
-            hintText: "Your Email",
+            hintText: "Email",
             onChanged: (value) {},
           ),
           RoundedPasswordField(
