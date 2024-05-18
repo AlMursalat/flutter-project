@@ -21,6 +21,7 @@ class RoundedInputEmailField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFieldContainer(
       child: TextField(
+        controller: controller,
         keyboardType: TextInputType.emailAddress,
         onChanged: onChanged,
         textInputAction: TextInputAction.next,

@@ -12,13 +12,15 @@ class RoundedInputNameField extends StatelessWidget {
     super.key,
     required this.hintText,
     this.icon = Icons.person,
-    required this.onChanged, this.controller,
+    required this.onChanged,
+    this.controller,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFieldContainer(
       child: TextField(
+        controller: controller,
         keyboardType: TextInputType.name,
         onChanged: onChanged,
         textInputAction: TextInputAction.next,
