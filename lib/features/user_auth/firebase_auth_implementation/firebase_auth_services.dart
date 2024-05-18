@@ -9,9 +9,9 @@ class FirebaseAuthServices {
           email: email, password: password);
       return credential.user;
     } catch (error) {
-      print("Error signing up: $error");
-      return null;
+      print("Terjadi error pada sign up");
     }
+      return null;
   }
 
   Future<User?> signInWithEmailAndPassword(String email, String password) async {
@@ -20,8 +20,8 @@ class FirebaseAuthServices {
           email: email, password: password);
       return credential.user;
     } catch (error) {
-      print("Error signing in: $error");
-      return null;
+      print("Terjadi error pada sign in");
     }
+      return null;
   }
 }

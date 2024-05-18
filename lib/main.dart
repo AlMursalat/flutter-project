@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:signup_and_signin/Screens/Register/register_screen.dart';
 import 'package:signup_and_signin/constants.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-Future main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 

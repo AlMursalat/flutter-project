@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:signup_and_signin/Screens/Login/login_screen.dart';
 import 'package:signup_and_signin/Screens/Register/background.dart';
@@ -9,11 +8,10 @@ import 'package:signup_and_signin/components/rounded_input_name_field.dart';
 import 'package:signup_and_signin/components/rounded_password_field.dart';
 import 'package:signup_and_signin/constants.dart';
 import 'package:signup_and_signin/features/user_auth/firebase_auth_implementation/firebase_auth_services.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Body extends StatefulWidget {
-  final Widget child;
-
-  const Body({super.key, required this.child});
+  const Body({super.key});
 
   @override
   State<Body> createState() => _BodyState();
@@ -22,9 +20,9 @@ class Body extends StatefulWidget {
 class _BodyState extends State<Body> {
   final FirebaseAuthServices _auth = FirebaseAuthServices();
 
-  TextEditingController _usernameController = TextEditingController();
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
 
   @override
   void dispose() {
@@ -80,8 +78,8 @@ class _BodyState extends State<Body> {
             height: size.height * 0.02,
           ),
           GestureDetector(
-            onTap: _signUp,
-            child: RoundedButton(text: "SIGN UP", press: () {}),
+            // onTap: _signUp,
+            child: RoundedButton(text: "SIGN UP", press: _signUp),
           ),
           SizedBox(
             height: size.height * 0.03,
@@ -112,24 +110,22 @@ class _BodyState extends State<Body> {
     User? user = await _auth.signUpWithEmailAndPassword(email, password);
 
     if (user != null) {
-      print("User is successfully created!");
-      _showDialog(context, "Pendaftaran Berhasil", "User is successfully created!");
+      _showDialog("Success", "User berhasil dibuat!");
     } else {
-      print("Terjadi error");
-      _showDialog(context, "Pendaftaran Gagal", "Terjadi error saat login.");
+      _showDialog("Error", "User gagal dibuat!");
     }
   }
 
-  void _showDialog(BuildContext context, String title, String content) {
+  void _showDialog(String title, String message) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text(title),
-          content: Text(content),
+          content: Text(message),
           actions: <Widget>[
             TextButton(
-              child: Text('OK'),
+              child: Text("OK"),
               onPressed: () {
                 Navigator.of(context).pop();
               },
